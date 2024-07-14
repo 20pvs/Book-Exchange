@@ -1,0 +1,33 @@
+.signIn{
+    background-image: url("https://res.cloudinary.com/amitcloud2/image/upload/v1698921007/rwj9jc4cb6tmrlci55br.jpg");
+    /* background-size: cover; */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginForm{
+    background-color: aliceblue;
+    padding: 30px;
+    border: 1px solid rgb(126, 122, 122);
+    border-radius: 1px;
+}
+.loginForm2{
+    background-color: transparent;
+    padding: 20px;
+    margin-top: 5px;
+    border: 1px solid rgb(126, 122, 122);
+    border-radius: 1px;
+    color: aliceblue;
+}
+#login-btn{
+    background-color: #ea1753;
+    border: none;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 5px 10px;
+    
+    cursor: pointer;
+    margin-top: 8px;
+}

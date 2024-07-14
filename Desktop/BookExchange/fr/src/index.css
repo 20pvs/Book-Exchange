@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    
+}
+
+nav{
+    font-size: 25px;
+    
+}
+#btn{
+    font-weight:500;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+#inp{
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+ul{
+    margin-top: 8px;
+    color: aquamarine;
+    margin-left: 50px;
+}
+h2{
+    color: #ff7200;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+#btn:hover{
+    cursor: pointer;
+    background-color: #ff7200;
+    color: aliceblue;
+}
+.box{
+    
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 1000px;
+    width: 100%;
+    background-color: aquamarine;
+}
+.items{
+    margin-top: 50px;
+    background-color: burlywood;
+    height: 280px;
+    width: 200px;
+}
