@@ -1,7 +1,8 @@
-#Book-Exchange Website
+****Book-Exchange Website****
+
 Welcome to the Book-Exchange Website project! This platform is designed to allow users to share, exchange, and discover books within a community. Our goal is to foster a love for reading by making books more accessible and encouraging the exchange of ideas through literature.
 
-##Project Overview
+**Project Overview**
 The Book-Exchange website is a user-friendly platform where members can:
 
 Post Books: Add books to your collection based on title, price, genre, or ISBN.
