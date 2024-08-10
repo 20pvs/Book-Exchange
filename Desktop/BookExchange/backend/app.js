@@ -1,28 +1,27 @@
-const express = require('express');
-const app = express()
-const PORT = 5000;
-const mongoose = require('mongoose');
-const { mongoUrl } = require("./keys")
-const cors = require("cors");
+const exprs = require('express');
+const app = exprs();
+const prt = 5000;
+const mangoose = require('mongoose');
+const db = require("./keyfile").mongoUrl;
+const cross = require("cors");
 
+app.use(cross());
 
+require('./models/model'); 
+require("./models/post");
 
-app.use(cors())
-require('./models/model')
-require("./models/post")
-app.use(express.json())
-app.use(require("./routes/auth"))
-app.use(require("./routes/createPost"))
-mongoose.connect(mongoUrl);
+app.use(exprs.urlencoded()); 
+app.use(require("./routes/auth"));
+app.use(require("./routes/createPost"));
 
-mongoose.connection.on("connected",()=>{
-    console.log("Succesfully we connect mongobd")
-})
+mangoose.connection.on("connected", () => {
+    console.log("connected");
+});
 
-mongoose.connection.on("error",()=>{
-    console.log("Failed to connect")
-})
+mangoose.connection.on("error", () => {
+    console.log("error");
+});
 
-app.listen(PORT,()=>{
-    console.log("server is running on " + PORT) 
-})
+app.listen(prt, () => {
+    console.log("Server up " + prt); 
+});
