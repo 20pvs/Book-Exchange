@@ -1,26 +1,36 @@
-const express = require('express');
-const app = express()
-const PORT = 5000;
-const mongoose = require('mongoose');
-const { mongoUrl } = require("./keys")
-const cors = require("cors");
+const exprs = require('express');
+const app = exprs();
+const prt = 5000; // Use prt (5000) for port
+const mangoose = require('mongoose');
+const db = require("./keyfile").mongoUrl;
+const cross = require("cors");
 
-app.use(cors())
-require('./models/model')
-require("./models/post")
-app.use(express.json())
-app.use(require("./routes/auth"))
-app.use(require("./routes/createPost"))
-mongoose.connect(mongoUrl);
+// Use 'cross' for the CORS library
+app.use(cross()); 
+require('./models/model'); 
+require("./models/post");
 
-mongoose.connection.on("connected",()=>{
-    console.log("Succesfully we connect mongobd")
-})
+// Combine express middlewares to support both JSON and URL-encoded bodies
+app.use(exprs.json());
+app.use(exprs.urlencoded({ extended: true }));
 
-mongoose.connection.on("error",()=>{
-    console.log("Failed to connect")
-})
+// Set up routes
+app.use(require("./routes/auth"));
+app.use(require("./routes/createPost"));
 
-app.listen(PORT,()=>{
-    console.log("server is running on " + PORT) 
-})
+// Connect to MongoDB
+mangoose.connect(db);
+
+// Connection events
+mangoose.connection.on("connected", () => {
+    console.log("connected");
+});
+
+mangoose.connection.on("error", () => {
+    console.log("error");
+});
+
+// Start server
+app.listen(prt, () => {
+    console.log("Server is running on port " + prt);
+});
